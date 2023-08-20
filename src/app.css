@@ -1,0 +1,55 @@
+body {
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+img {
+  max-width: 40%;
+  max-height: 40%;
+}
+
+.add-new-product {
+  text-align: center;
+}
+.add-new-product h2 {
+  margin-bottom: 1.5rem;
+}
+.add-new-product .form-container {
+  display: flex;
+  justify-content: center;
+}
+.add-new-product .form-container form {
+  width: 400px;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.add-new-product .form-container form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.add-new-product .form-container form .form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.add-new-product .form-container form .form-group input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.add-new-product .form-container form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=app.css.map */
