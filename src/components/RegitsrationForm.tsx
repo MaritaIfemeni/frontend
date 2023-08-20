@@ -13,7 +13,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 import useAppDispatch from "../hooks/useAppDispatch";
-import useAppSelector from "../hooks/useAppSelector";
 import { createNewUser } from "../redux/reducers/userReducer";
 import registrationSchema, {
   RegistrationFormData,

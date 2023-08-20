@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { styled } from "@mui/material/styles";
 import {
   Container,
-  InputBase,
   Select,
   MenuItem,
   Button,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  List,
-  ListItem,
-  IconButton,
   Typography,
   TextField,
-  Autocomplete,
   Card,
   CardMedia,
   Grid,
@@ -27,7 +15,6 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import SortIcon from "@mui/icons-material/Sort";
 
 import {
@@ -44,7 +31,6 @@ const ProductPage = () => {
   const dispatch = useAppDispatch();
   const [search, setSearch] = useState<string>("");
   const debouncedSearch = useDebounce<string>(search, 1000);
-  const [page, setPage] = useState(1);
   const [order, setOrder] = useState<string>("UpdatedAt");
   const [descending, setDescending] = useState<boolean>(true);
   const [priceFilter, setPriceFilter] = useState<number>(0);
@@ -76,10 +62,6 @@ const ProductPage = () => {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
-  };
-
-  const handleOrderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setOrder(event.target.value);
   };
 
   const handleDescendingChange = (

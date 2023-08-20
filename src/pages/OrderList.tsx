@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import useAppDispatch from "../hooks/useAppDispatch";
 import useAppSelector from "../hooks/useAppSelector";
 import { fetchAllOrder } from "../redux/reducers/orderReducer";
-import { Order, OrderDetail } from "../types/Order";
+import { OrderDetail } from "../types/Order";
 
 const OrderList = () => {
   const dispatch = useAppDispatch();

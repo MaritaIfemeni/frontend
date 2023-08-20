@@ -30,9 +30,7 @@ const style = {
 
 const SingleProductPage = () => {
   const dispatch = useAppDispatch();
-  const { products, loading, error } = useAppSelector(
-    (state) => state.productsReducer
-  );
+  const { products } = useAppSelector((state) => state.productsReducer);
   const { id } = useParams();
   const selectedProduct =
     products && products.find((product: Product) => product.id === String(id));
@@ -45,11 +43,13 @@ const SingleProductPage = () => {
       localStorage.setItem("currentProduct", JSON.stringify(selectedProduct));
     }
   }, []);
+
   useEffect(() => {
     setCurrentProduct(
       JSON.parse(localStorage.getItem("currentProduct") || "{}")
     );
-  }, []);
+  }, [selectedProduct]);
+
   const handleAddToCart = (product: Product | undefined) => {
     if (product) {
       dispatch(addCartItem(product));
@@ -82,7 +82,6 @@ const SingleProductPage = () => {
               Add to Cart
             </Button>
           </Box>
-
         </Box>
       </CardContent>
       <CardActions>
