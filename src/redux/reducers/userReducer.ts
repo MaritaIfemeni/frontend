@@ -19,7 +19,6 @@ import { UserReducer } from "../../types/UserReducer";
 import { NewUser } from "../../types/NewUser";
 import { UserCredential } from "../../types/UserCredentials";
 import { UpdateUser } from "../../types/UpdateUser";
-import { number } from "yup";
 
 const initialState: UserReducer = {
   users: [],

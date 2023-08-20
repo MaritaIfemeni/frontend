@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SubmitHandler } from "react-hook-form";
 
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { updateProduct } from "../../redux/reducers/productsReducer";

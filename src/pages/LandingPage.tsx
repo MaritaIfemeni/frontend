@@ -11,7 +11,8 @@ const LandingPage = () => {
 
   useEffect(() => {
     dispatch(checkStoredToken());
-  }, []);
+  }
+  , [dispatch]);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,14 +14,12 @@ import Container from "@mui/material/Container";
 
 import useAppDispatch from "../hooks/useAppDispatch";
 import useAppSelector from "../hooks/useAppSelector";
-import { createNewUser, setUserResponse } from "../redux/reducers/userReducer";
-import { User } from "../types/User";
+import { createNewUser } from "../redux/reducers/userReducer";
 import registrationSchema, {
   RegistrationFormData,
 } from "../validation/registrationSchema";
 
 const RegitsrationForm = () => {
-  const { userResponse } = useAppSelector((state) => state.userReducer);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const {

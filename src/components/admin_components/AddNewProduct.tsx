@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import useAppSelector from "../../hooks/useAppSelector";
 import {
-  createNewProduct,
-  setProductResponse,
+  createNewProduct
 } from "../../redux/reducers/productsReducer";
 
 const AddNewProduct = () => {
@@ -14,8 +13,6 @@ const AddNewProduct = () => {
   const [price, setPrice] = useState(0);
   const [stock, setStock] = useState(0);
   const [productImages, setProductImages] = useState<{ link: string }[]>([]); // Updatet this line just
-  const { productResponse } = useAppSelector((state) => state.productsReducer);
-
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
