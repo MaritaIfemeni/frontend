@@ -31,7 +31,7 @@ const ProductPage = () => {
   const dispatch = useAppDispatch();
   const [search, setSearch] = useState<string>("");
   const debouncedSearch = useDebounce<string>(search, 1000);
-  const [order, setOrder] = useState<string>("UpdatedAt");
+  const [order] = useState<string>("UpdatedAt");
   const [descending, setDescending] = useState<boolean>(true);
   const [priceFilter, setPriceFilter] = useState<number>(0);
   const products = useAppSelector((state) => state.productsReducer.products);

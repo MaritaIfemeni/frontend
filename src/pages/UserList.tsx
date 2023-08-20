@@ -17,7 +17,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import useAppDispatch from "../hooks/useAppDispatch";
 import useAppSelector from "../hooks/useAppSelector";
 import { fetchAllUsers, deleteUser } from "../redux/reducers/userReducer";
-import { d } from "msw/lib/glossary-de6278a9";
 
 const UserList = () => {
   const dispatch = useAppDispatch();

@@ -42,7 +42,7 @@ const SingleProductPage = () => {
       setCurrentProduct(selectedProduct);
       localStorage.setItem("currentProduct", JSON.stringify(selectedProduct));
     }
-  }, []);
+  }, [selectedProduct]);
 
   useEffect(() => {
     setCurrentProduct(
