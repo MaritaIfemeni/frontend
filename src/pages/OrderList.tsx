@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import {
   Container,
   Typography,
@@ -27,7 +27,9 @@ const OrderList = () => {
     dispatch(fetchAllOrder());
   }, [dispatch]);
 
-  const orders = Array.isArray(orderData) ? orderData : [orderData];
+  const orders = useMemo(() => {
+    return Array.isArray(orderData) ? orderData : [orderData];
+  }, [orderData]);
 
   useEffect(() => {
     const productIdsToFetch = new Set<string>();

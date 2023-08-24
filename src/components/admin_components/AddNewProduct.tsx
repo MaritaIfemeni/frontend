@@ -21,7 +21,6 @@ const AddNewProduct = () => {
       );
 
       if (response.payload) {
-        const product = response.payload;
         alert("Product created successfully!");
       } else {
         alert("Failed to create product");
