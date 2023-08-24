@@ -22,14 +22,11 @@ const AddNewProduct = () => {
 
       if (response.payload) {
         const product = response.payload;
-        console.log(product);
         alert("Product created successfully!");
       } else {
-        console.log(response);
         alert("Failed to create product");
       }
     } catch (error) {
-      console.log(error);
       alert("An error occurred while creating the product");
     }
   };

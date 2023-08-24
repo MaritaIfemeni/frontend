@@ -1,12 +1,7 @@
-import {
-  createAsyncThunk,
-  createSlice,
-  PayloadAction,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 import { Order } from "../../types/Order";
-
 
 const initialState: Order = {
   fullName: "",

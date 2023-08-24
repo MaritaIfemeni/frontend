@@ -11,6 +11,7 @@ const UpdateProduct = () => {
   const [price, setPrice] = useState(0);
   const [stock, setStock] = useState(0);
   const [productImages, setProductImages] = useState<{ link: string }[]>([]);
+  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await dispatch(

@@ -16,11 +16,13 @@ import {
   createNewProductApi,
   updateProductApi,
   deleteProductApi,
+  fetchProductByIdApi,
 } from "../../api/productsApi";
 
 interface ProductsState {
   products: Product[];
   productResponse: {};
+  productInfo: Product[];
   loading: boolean;
   error: string;
 }
@@ -28,6 +30,7 @@ interface ProductsState {
 const initialState: ProductsState = {
   products: [],
   productResponse: {},
+  productInfo: [],
   loading: false,
   error: "",
 };
@@ -79,6 +82,15 @@ export const deleteProduct = createAsyncThunk(
   }
 );
 
+
+export const fetchProductById = createAsyncThunk(
+  "products/fetchById",
+  async (id: string) => {
+    return await fetchProductByIdApi(id);
+    
+  }
+);
+
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -107,12 +119,17 @@ const productsSlice = createSlice({
           fetchAllProducts.pending,
           createNewProduct.pending,
           deleteProduct.pending,
-          updateProduct.pending
+          updateProduct.pending,
+          fetchProductById.pending
         ),
         (state) => {
           state.loading = true;
         }
       )
+      .addMatcher(isFulfilled(fetchProductById), (state, action) => {
+        state.productInfo.push(action.payload); // Store the fetched product
+        state.loading = false;
+      })
       .addMatcher(isFulfilled(fetchAllProducts), (state, action) => {
         state.products = action.payload;
         state.loading = false;
@@ -128,7 +145,8 @@ const productsSlice = createSlice({
         isAnyOf(
           fetchAllProducts.rejected,
           createNewProduct.rejected,
-          deleteProduct.rejected
+          deleteProduct.rejected,
+          fetchProductById.rejected
         ),
         (state, action) => {
           state.loading = false;

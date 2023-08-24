@@ -65,7 +65,7 @@ const RegitsrationForm = () => {
                 fullWidth
                 id="username"
                 {...register("username")}
-                label="username"
+                label="Username"
                 name="username"
                 autoComplete="username"
                 error={!!errors.username}
@@ -78,7 +78,7 @@ const RegitsrationForm = () => {
                 fullWidth
                 id="firstName"
                 {...register("firstName")}
-                label="firstName"
+                label="First Name"
                 name="firstName"
                 autoComplete="firstName"
                 error={!!errors.firstName}
@@ -91,7 +91,7 @@ const RegitsrationForm = () => {
                 fullWidth
                 id="lastName"
                 {...register("lastName")}
-                label="lastName"
+                label="Last Name"
                 name="lastName"
                 autoComplete="lastName"
                 error={!!errors.lastName}
